@@ -59,8 +59,13 @@
     <div class="container">
       <div class="jumbotron">
         <h1>Buzzbold Coding Exam</h1>
-        <p>Your output will replace the body of this page.</p>
-        <p>All resources and requirements for the assignment can be found <a href="resources.html">here</a> (or in the <a href="resources.html">Exam Resources</a> item in the navigation).</p>
+
+        <form name="state" action="/action_page.php"
+              onsubmit="return validateForm()" method="post">
+          State Abbreviation: <input type="text" name="sname" pattern="[A-Za-z]{2}">
+          <input type="submit" value="Submit">
+        </form>
+
       </div>
     </div><!-- /.container -->
 
