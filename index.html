@@ -33,6 +33,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+
+
   <body>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -60,11 +62,24 @@
       <div class="jumbotron">
         <h1>Buzzbold Coding Exam</h1>
 
-        <form name="state" action="/action_page.php"
-              onsubmit="return validateForm()" method="post">
-          State Abbreviation: <input type="text" name="sname" pattern="[A-Za-z]{2}">
+        <form name="state" action="/action_page.php" onsubmit="return validateForm()" method="post">
+          State Abbreviation: <input type="text" name="sname" id ="sname" pattern="[A-Za-z]{2}">
           <input type="submit" value="Submit">
         </form>
+
+          <!-- button function-->
+          <script>
+            $(function)
+                $("#button").click(function(){
+                    e.preventDefault();
+                    $.ajax({
+                    url: 'https://openstates.org/api/v1/legislators/?state'
+                    type: 'POST'
+                    data: $('#sname').val()
+                    dataType: 'json'
+                    )
+
+  </script>
 
       </div>
     </div><!-- /.container -->
